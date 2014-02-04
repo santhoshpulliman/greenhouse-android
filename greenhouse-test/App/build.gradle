@@ -26,11 +26,11 @@ android {
             proguardFile getDefaultProguardFile('proguard-android-optimize.txt')
         }
     }
-    productFlavors {
-        defaultFlavor {
-            proguardFile 'proguard-rules.txt'
-        }
-    }
+//    productFlavors {
+//        defaultFlavor {
+//            proguardFile 'proguard-rules.txt'
+//        }
+//    }
 }
 
 dependencies {
