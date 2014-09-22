@@ -19,6 +19,10 @@ android {
     defaultConfig {
         minSdkVersion 14
         targetSdkVersion 19
+        if (System.getProperty("GREENHOUSE_BUILD")) {
+            versionName = "1.0." + System.getProperty("BUILD_NUMBER", "1")
+            versionCode = Integer.valueOf(System.getProperty("BUILD_NUMBER, "1")
+        }
     }
     buildTypes {
         release {
