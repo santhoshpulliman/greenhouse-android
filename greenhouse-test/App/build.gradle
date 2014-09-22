@@ -19,9 +19,15 @@ android {
     defaultConfig {
         minSdkVersion 14
         targetSdkVersion 19
-        if (System.getProperty("GREENHOUSE_BUILD")) {
-            versionName = "1.0." + System.getProperty("BUILD_NUMBER", "1")
-            versionCode = Integer.valueOf(System.getProperty("BUILD_NUMBER, "1")
+        greenhouseBuild = System.getenv()["GREENHOUSE_BUILD"]
+        if (greenhouseBuild) {
+            logger.quiet("GREENHOUSE_BUILD variable is true")
+            buildNumber = System.getenv()["BUILD_NUMBER"]
+            logger.quiet("BUILD_NUMBER: " + buildNumber)
+            versionName = "1.0." + buildNumber 
+            versionCode = Integer.valueOf(buildNumber)
+        } else {
+            logger.quiet("GREENHOUSE_BUILD variable is false")
         }
     }
     buildTypes {
