@@ -20,6 +20,8 @@ android {
         minSdkVersion 14
         targetSdkVersion 19
         greenhouseBuild = System.getenv()["GREENHOUSE_BUILD"]
+        logger.quiet("JAVA_HOME: " + System.getenv()["JAVA_HOME"])
+        logger.quiet("JAVA8_HOME: " + System.getenv()["JAVA8_HOME"])
         if (greenhouseBuild) {
             logger.quiet("GREENHOUSE_BUILD variable is true")
             buildNumber = System.getenv()["BUILD_NUMBER"]
