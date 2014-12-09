@@ -3,7 +3,7 @@ buildscript {
         mavenCentral()
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:0.11.+'
+        classpath 'com.android.tools.build:gradle:1.0.0'
     }
 }
 apply plugin: 'android'
@@ -13,13 +13,13 @@ repositories {
 }
 
 android {
-    compileSdkVersion 19
-    buildToolsVersion "19.1"
+    compileSdkVersion 21
+    buildToolsVersion "21.1"
 
     defaultConfig {
         minSdkVersion 14
         targetSdkVersion 19
-        greenhouseBuild = System.getenv()["GREENHOUSE_BUILD"]
+        def greenhouseBuild = System.getenv()["GREENHOUSE_BUILD"]
         logger.quiet(System.getenv().toMapString())
         if (greenhouseBuild) {
             logger.quiet("GREENHOUSE_BUILD variable is true")
@@ -33,7 +33,6 @@ android {
     }
     buildTypes {
         release {
-            runProguard true
             proguardFile 'proguard-android.txt'
         }
     }
