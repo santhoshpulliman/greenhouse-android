@@ -20,6 +20,16 @@ android {
         minSdkVersion 14
         targetSdkVersion 21
     }
+    
+    productFlavors {
+        greenhouseandroid {
+            applicationId "com.greenhouseci.greenhouseandroid"
+        }
+
+        flavor2 {
+            applicationId "com.greenhouseci.greenhouseandroidflavor2"
+        }
+    }
 }
 
 dependencies {
