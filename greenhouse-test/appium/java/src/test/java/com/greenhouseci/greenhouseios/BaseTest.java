@@ -21,7 +21,7 @@ public class BaseTest {
     public void setUp() throws Exception {
         // set up appium
         File classpathRoot = new File(System.getProperty("user.dir"));
-        File appPath = new File(classpathRoot, "../../App/build/outputs/apk/App-debug.apk");
+        File appPath = new File(classpathRoot, "../../App/build/outputs/apk/App-greenhouseandroid-debug.apk");
         DesiredCapabilities capabilities = new DesiredCapabilities();
         capabilities.setCapability(CapabilityType.BROWSER_NAME, "");
         capabilities.setCapability("platformName", "Android");
