@@ -17,6 +17,7 @@ android {
     buildToolsVersion "21.1"
 
     defaultConfig {
+        testInstrumentationRunner = "android.test.InstrumentationTestRunner"
         minSdkVersion 14
         targetSdkVersion 21
     }
