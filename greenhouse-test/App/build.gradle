@@ -24,11 +24,6 @@ android {
     defaultConfig {
         applicationId "lab.mobi.greenhousetest"
     }
-
-    compileOptions {
-        sourceCompatibility JavaVersion.VERSION_1_7
-        targetCompatibility JavaVersion.VERSION_1_7
-    }
 }
 
 apply plugin: "android-unit-test"
