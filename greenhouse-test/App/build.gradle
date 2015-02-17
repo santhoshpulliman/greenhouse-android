@@ -1,31 +1,40 @@
 buildscript {
-    repositories {
-        mavenCentral()
-    }
     dependencies {
-        classpath 'com.android.tools.build:gradle:1.0.+'
+        repositories {
+            mavenCentral()
+        }
+
+        classpath "com.android.tools.build:gradle:1.0.0"
+        classpath "com.github.jcandksolutions.gradle:android-unit-test:2.1.1"
     }
 }
-apply plugin: 'android'
 
 repositories {
+    maven { url "https://oss.sonatype.org/content/repositories/snapshots" }
+    mavenLocal()
     mavenCentral()
 }
 
+apply plugin: "com.android.application"
+
 android {
     compileSdkVersion 21
-    buildToolsVersion "21.0.1"
+    buildToolsVersion "21.1.2"
 
     defaultConfig {
-        minSdkVersion 14
-        targetSdkVersion 21
+        applicationId "lab.mobi.greenhousetest"
     }
-/*    productFlavors {
-        defaultFlavor {
-            proguardFile 'proguard-rules.txt'
-        }
-    }*/
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_7
+        targetCompatibility JavaVersion.VERSION_1_7
+    }
 }
 
+apply plugin: "android-unit-test"
+
 dependencies {
+    testCompile "junit:junit:4.10"
+    testCompile "org.assertj:assertj-core:1.7.0"
+    testCompile "org.robolectric:robolectric:3.0-SNAPSHOT"
 }
