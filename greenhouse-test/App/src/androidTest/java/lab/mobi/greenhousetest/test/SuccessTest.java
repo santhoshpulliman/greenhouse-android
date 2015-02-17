@@ -24,12 +24,12 @@ public class SuccessTest extends AndroidTestCase {
         assertFalse(true && false);
     }
 
-    public void testSuccess2() throws Exception {
+    public void testFail() throws Exception {
         assertEquals(1, 1);
         assertNotSame(1, 2);
         assertTrue(true);
         assertFalse(false);
-        assertTrue(true || false);
+        assertTrue(false || false);
         assertFalse(true && false);
     }
 
