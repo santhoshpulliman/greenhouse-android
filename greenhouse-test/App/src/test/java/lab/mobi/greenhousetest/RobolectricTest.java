@@ -1,18 +1,15 @@
-package lab.mobi.greenhousetest.test;
+package lab.mobi.greenhousetest;
 
 import android.app.Activity;
 import android.widget.TextView;
 
-import lab.mobi.greenhousetest.R;
-import lab.mobi.greenhousetest.MainActivity;
-
 import org.junit.Test;
 import org.junit.runner.RunWith;
+import org.junit.Assert;
 import org.robolectric.Robolectric;
 import org.robolectric.RobolectricTestRunner;
 import org.robolectric.shadows.ShadowTextView;
 
-import static org.assertj.core.api.Assertions.assertThat;
 import static org.robolectric.Shadows.shadowOf;
 
 @RunWith(RobolectricTestRunner.class)
@@ -23,7 +20,7 @@ public class RobolectricTest {
         Activity activity = Robolectric.setupActivity(MainActivity.class);
         TextView textView = (TextView) activity.findViewById(R.id.text_hello);
         ShadowTextView shadowView = shadowOf(textView);
-        assertThat(shadowView.innerText()).isEqualTo("Hello world!");
+        Assert.assertEquals("", "Hello world!", shadowView.innerText());
     }
 
     @Test
@@ -31,6 +28,6 @@ public class RobolectricTest {
         Activity activity = Robolectric.setupActivity(MainActivity.class);
         TextView textView = (TextView) activity.findViewById(R.id.text_hello);
         ShadowTextView shadowView = shadowOf(textView);
-        assertThat(shadowView.innerText()).isEqualTo("Hello World!");
+        Assert.assertEquals("", "Wrong text", shadowView.innerText());
     }
 }
