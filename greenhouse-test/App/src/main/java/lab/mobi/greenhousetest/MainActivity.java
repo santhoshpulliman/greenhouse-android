@@ -10,6 +10,9 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.os.Build;
+import android.widget.TextView;
+
+import lab.mobi.testlibrary.Library;
 
 public class MainActivity extends Activity {
 
@@ -58,6 +61,9 @@ public class MainActivity extends Activity {
         public View onCreateView(LayoutInflater inflater, ViewGroup container,
                 Bundle savedInstanceState) {
             View rootView = inflater.inflate(R.layout.fragment_main, container, false);
+            TextView text = (TextView) rootView.findViewById(R.id.text);
+            Library lib = new Library("Hello, world from library");
+            text.setText(lib.getValue());
             return rootView;
         }
     }
