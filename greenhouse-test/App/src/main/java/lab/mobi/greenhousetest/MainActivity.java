@@ -1,7 +1,6 @@
 package lab.mobi.greenhousetest;
 
 import android.app.Activity;
-import android.app.ActionBar;
 import android.app.Fragment;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -9,9 +8,9 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
-import android.os.Build;
 import android.widget.TextView;
 
+import lab.mobi.javalibrary.JavaLibrary;
 import lab.mobi.testlibrary.Library;
 
 public class MainActivity extends Activity {
@@ -62,8 +61,10 @@ public class MainActivity extends Activity {
                 Bundle savedInstanceState) {
             View rootView = inflater.inflate(R.layout.fragment_main, container, false);
             TextView text = (TextView) rootView.findViewById(R.id.text);
-            Library lib = new Library("Hello, world from library");
-            text.setText(lib.getValue());
+            Library lib = new Library("hello, world from library");
+            JavaLibrary javaLib = new JavaLibrary(lib.getValue());
+            javaLib.processValue();
+            text.setText(javaLib.getJavaValue());
             return rootView;
         }
     }
