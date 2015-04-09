@@ -36,6 +36,20 @@ android {
             proguardFile 'proguard-android.txt'
         }
     }
+    productFlavors {
+        defaultFlavor {
+            proguardFile 'proguard-rules.txt'
+        }
+        testFlavor1 {
+            proguardFile 'proguard-rules.txt'
+        }
+        testFlavor2 {
+            proguardFile 'proguard-rules.txt'
+        }
+        testFlavor3 {
+            proguardFile 'proguard-rules.txt'
+        }
+    }
 }
 
 dependencies {
