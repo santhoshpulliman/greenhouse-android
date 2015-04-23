@@ -1,20 +1,34 @@
 package com.greenhouseci.greenhouseios;
 
+import org.junit.Assert;
 import org.junit.Test;
-import com.greenhouseci.greenhouseios.BaseTest;
-
-import static org.junit.Assert.assertTrue;
+import org.openqa.selenium.WebElement;
 
 public class MainTest extends BaseTest {
 
-    @Test
-    public void testExampleFail() {
-        assertTrue(false);
-    }
-    
-    @Test
-    public void testExampleSuccess() {
-        assertTrue(true);
-    }
-    
+	@Test
+	public void testFindViewSuccess() {
+		WebElement textView = this.driver.findElementByName("text_hello_world");
+		Assert.assertNotNull(textView);
+		Assert.assertEquals(textView.getText(), "Hello world!");
+	}
+
+	@Test
+	public void testFindViewFail() {
+		WebElement textView = this.driver.findElementByName("text_hello_world");
+		Assert.assertNotNull(textView);
+		Assert.assertEquals(textView.getText(), "Hello world");
+	}
+
+	@Test
+	public void testButtonClickSuccess() {
+		WebElement textView = this.driver.findElementByName("text_hello_world");
+		Assert.assertNotNull(textView);
+
+		WebElement button = this.driver.findElementByName("button_change_text");
+		Assert.assertNotNull(button);
+		button.click();
+
+		Assert.assertEquals(textView.getText(), "Changed hello world");
+	}
 }

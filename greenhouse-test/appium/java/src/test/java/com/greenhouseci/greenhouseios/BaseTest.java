@@ -13,7 +13,7 @@ import java.net.URL;
 
 public class BaseTest {
 
-    private AppiumDriver driver;
+    protected AppiumDriver driver;
 
     private WebElement row;
 
@@ -29,12 +29,12 @@ public class BaseTest {
         capabilities.setCapability("platformVersion", "4.3");
         capabilities.setCapability("app", appPath);
         URL serverAddress = new URL("http://127.0.0.1:4723/wd/hub");
-        driver = new AndroidDriver(serverAddress, capabilities);
+        this.driver = new AndroidDriver(serverAddress, capabilities);
     }
 
     @After
     public void tearDown() throws Exception {
-        driver.quit();
+        this.driver.quit();
     }
     
 }
