@@ -1,0 +1,31 @@
+buildscript {
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:0.4'
+    }
+}
+
+apply plugin: 'android'
+
+repositories {
+    mavenCentral()
+}
+
+android {
+    compileSdkVersion 15
+    buildToolsVersion "17"
+
+    defaultConfig {
+        minSdkVersion 14
+        targetSdkVersion 15
+    }
+
+    testOptions {
+        resultsDir = "$project.buildDir/foo/results"
+    }
+}
+
+dependencies {
+}
