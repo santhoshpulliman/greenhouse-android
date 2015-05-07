@@ -1,1 +1,3 @@
 include ':App'
+
+project(":App").name = "DifferentName"
