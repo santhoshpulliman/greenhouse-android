@@ -4,6 +4,8 @@ import org.junit.Assert;
 import org.junit.Test;
 import org.openqa.selenium.WebElement;
 
+import java.lang.InterruptedException;
+
 public class MainTest extends BaseTest {
 
 	@Test
@@ -21,7 +23,7 @@ public class MainTest extends BaseTest {
 	}
 
 	@Test
-	public void testLongDuration() {
+	public void testLongDuration() throws InterruptedException {
 		Thread.sleep(1100 * 1000);
 		Assert.assertNull(null);
 	}
