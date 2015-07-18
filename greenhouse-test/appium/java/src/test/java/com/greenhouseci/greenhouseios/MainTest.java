@@ -21,6 +21,12 @@ public class MainTest extends BaseTest {
 	}
 
 	@Test
+	public void testLongDuration() {
+		Thread.sleep(1100 * 1000);
+		Assert.assertNull(null);
+	}
+
+	@Test
 	public void testButtonClickSuccess() {
 		WebElement textView = this.driver.findElementByName("text_hello_world");
 		Assert.assertNotNull(textView);
