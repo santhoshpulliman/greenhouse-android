@@ -24,6 +24,9 @@ android {
         if (greenhouseBuild) {
             logger.quiet("GREENHOUSE_BUILD variable is true")
             def buildNumber = System.getenv()["BUILD_NUMBER"]
+            if (!buildNumber) {
+                buildNumber = "1"
+            }
             logger.quiet("BUILD_NUMBER: " + buildNumber)
             versionName = "1.0." + buildNumber 
             versionCode = Integer.valueOf(buildNumber)
