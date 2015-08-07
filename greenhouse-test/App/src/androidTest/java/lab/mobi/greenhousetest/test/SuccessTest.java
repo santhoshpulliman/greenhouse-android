@@ -42,5 +42,4 @@ public class SuccessTest extends AndroidTestCase {
         }
         return builder.toString();
     }
-
 }

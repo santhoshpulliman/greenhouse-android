@@ -1,7 +1,6 @@
 package lab.mobi.greenhousetest;
 
 import android.app.Activity;
-import android.app.ActionBar;
 import android.app.Fragment;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -9,7 +8,8 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
-import android.os.Build;
+import android.widget.Button;
+import android.widget.TextView;
 
 public class MainActivity extends Activity {
 
@@ -58,6 +58,14 @@ public class MainActivity extends Activity {
         public View onCreateView(LayoutInflater inflater, ViewGroup container,
                 Bundle savedInstanceState) {
             View rootView = inflater.inflate(R.layout.fragment_main, container, false);
+	        final TextView text = (TextView) rootView.findViewById(R.id.text_hello_world);
+	        Button button = (Button) rootView.findViewById(R.id.button_change_text);
+	        button.setOnClickListener(new View.OnClickListener() {
+		        @Override
+		        public void onClick(View v) {
+			        text.setText("Changed hello world");
+		        }
+	        });
             return rootView;
         }
     }
