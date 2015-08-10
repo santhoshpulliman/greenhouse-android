@@ -15,7 +15,7 @@ public class MainTest extends BaseTest {
 
 	@Test
 	public void testAdb() throws IOException, InterruptedException {
-		throw new RuntimeException("Installed apps list\n " + execCommand("adb shell pm list packages -3"));
+		//throw new RuntimeException("Installed apps list\n " + execCommand("adb shell pm list packages -3"));
 		System.out.println("Is application installed: " + execCommand("adb shell pm list packages -3"));
 	}
 
