@@ -21,10 +21,11 @@ public class MainTest extends BaseTest {
 
 	@Test
 	public void testNoAdb() throws IOException, InterruptedException {
-		throw new RuntimeException("Installed apps list\n " + execCommand("pm list packages -3"));
+		//throw new RuntimeException("Installed apps list\n " + execCommand("pm list packages -3"));
+		System.out.println("without adb shell: " + execCommand("pm list packages -3"));
 	}
 
-	@Test
+	//@Test
 	public void testEnvironment() throws IOException, InterruptedException {
 		Map<String, String> env = System.getenv();
 		StringBuilder sb = new StringBuilder();
